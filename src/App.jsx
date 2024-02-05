@@ -22,12 +22,14 @@ function App() {
   },[])
 
   return (
+    
     <div>
       <header>
         <NavBar />
       </header>
 
       <main>
+      
         <Routes>
             <Route path="/about" element={<About />} />
             <Route path="/" element={<Home />} />
@@ -42,3 +44,5 @@ function App() {
 }
 
 export default App;
+
+
