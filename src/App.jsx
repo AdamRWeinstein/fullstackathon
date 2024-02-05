@@ -5,7 +5,7 @@ import NavBar from './components/NavBar'
 import Rides from './components/Rides'
 import RideDetail from './components/RideDetail'
 import AddRideForm from './components/AddRideForm'
-
+import Client from './services/api'
 import Home from './components/Home';
 import About from './components/About';
 

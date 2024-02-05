@@ -20,7 +20,7 @@ const AddRideForm = () => {
     e.preventDefault();
     try {
       await Client.post('rides', formData); 
-      
+
       setFormData({
         name: '',
         image: '',
@@ -54,7 +54,11 @@ const AddRideForm = () => {
         </div>
         <div>
           <label>Thrill Level:</label>
-          <input type="text" name="thrill" value={formData.thrill} onChange={handleChange} />
+          <select name="thrill" value={formData.thrill} onChange={handleChange}>
+            <option value="Mild">Mild</option>
+            <option value="Moderate">Moderate</option>
+            <option value="Maximum">Maximum</option>
+          </select>
         </div>
         <div>
           <label>Height Requirement:</label>
@@ -62,7 +66,12 @@ const AddRideForm = () => {
         </div>
         <div>
           <label>Pass Requirement:</label>
-          <input type="text" name="pass" value={formData.pass} onChange={handleChange} />
+          <select name="pass" value={formData.pass} onChange={handleChange}>
+            <option value="">Select Pass Requirement</option>
+            <option value="Platinum">Platinum</option>
+            <option value="Gold and Platinum">Gold and Platinum</option>
+            <option value="Regular, Gold and Platinum">Regular, Gold and Platinum</option>
+          </select>
         </div>
         <button type="submit">Add Ride</button>
       </form>
