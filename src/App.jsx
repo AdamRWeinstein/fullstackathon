@@ -1,27 +1,33 @@
 import { useState, useEffect } from 'react'
 import './App.css'
-import {Routes, Route} from 'react-router-dom'
+import {Router, Routes, Route} from 'react-router-dom'
 import NavBar from './components/NavBar'
 import Rides from './components/Rides'
 import RideDetail from './components/RideDetail'
 import RideForm from './components/RideForm'
 
-function App() {
+import Home from './components/Home';
+import About from './components/About';
 
+function App() {
   return (
-   
-      <div>
+    <div>
       <header></header>
+
       <main>
-      <NavBar />
-      <Rides />
-      <RideForm />
+        <Routes>
+          <Route>
+            <Route path="/about" element={<About />} />
+            <Route path="/" element={<Home />} />
+          </Route>
+        </Routes>
+        <NavBar />
+        <Rides />
+        <RideForm />
       </main>
       <footer></footer>
-
     </div>
-  
-  )
+  );
 }
 
-export default App
+export default App;
