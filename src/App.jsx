@@ -31,8 +31,8 @@ function App() {
         <Routes>
             <Route path="/about" element={<About />} />
             <Route path="/" element={<Home />} />
-              <Route path="/add-ride" element={<AddRideForm />} />
-          <Route path="/rides" element={<Rides rides={rides}/>} />
+            <Route path="/add-ride" element={<AddRideForm />} />
+            <Route path="/rides" element={<Rides rides={rides}/>} />
             <Route path='/rides/:id' element={<RideDetail rides={rides}/>}/>
         </Routes>
       </main>

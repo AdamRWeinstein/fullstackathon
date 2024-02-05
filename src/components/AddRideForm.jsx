@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
+import Client from '../services/api';
 
-function AddRideForm() {
+const AddRideForm = () => {
   const [formData, setFormData] = useState({
     name: '',
     image: '',
@@ -18,29 +19,20 @@ function AddRideForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('/api/rides', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
+      await Client.post('rides', formData); 
+      
+      setFormData({
+        name: '',
+        image: '',
+        description: '',
+        thrill: '',
+        height: '',
+        pass: ''
       });
-      if (response.ok) {
-        console.log('Ride added successfully');
-        // Reset form fields after successful submission
-        setFormData({
-          name: '',
-          image: '',
-          description: '',
-          thrill: '',
-          height: '',
-          pass: ''
-        });
-      } else {
-        console.error('Failed to add ride');
-      }
+      console.log('Ride added successfully');
     } catch (error) {
-      console.error('Error:', error);
+      console.error('Error adding ride:', error);
+     
     }
   };
 
@@ -76,6 +68,6 @@ function AddRideForm() {
       </form>
     </div>
   );
-}
+};
 
 export default AddRideForm;
