@@ -7,7 +7,7 @@ const Rides = ({rides}) => {
     {rides.map(ride => (
         <div >
         <Link to={`${ride._id}`}>
-        <img src={ride.image} alt={ride.name} />
+        <img src={ride.image} alt={ride.name} className="ride-image" />
         <h3>{ride.name}</h3>
         </Link>
         </div>

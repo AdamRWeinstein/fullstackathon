@@ -19,8 +19,16 @@ const RideDetail = ({rides}) => {
     <div>
       <h1>{ride.name}</h1>
       <div>
-       <img src={ride.image} alt={ride.name} />
+       <img src={ride.image} alt={ride.name} className="ride-image" />
+       <div>
        <h3>{ride.description}</h3>
+       </div>
+       <div>
+        <h2>Ride Info</h2>
+        <p>{ride.thrill}</p>
+        <p>{ride.height}</p>
+        <p>{ride.pass}</p>
+        </div>
       </div>
     </div>
   ): null
