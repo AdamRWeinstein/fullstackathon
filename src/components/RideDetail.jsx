@@ -25,9 +25,9 @@ const RideDetail = ({rides}) => {
        </div>
        <div>
         <h2>Ride Info</h2>
-        <p>{ride.thrill}</p>
-        <p>{ride.height}</p>
-        <p>{ride.pass}</p>
+        <p>Thrill Level :{ride.thrill}</p>
+        <p>Height Requirement :{ride.height}</p>
+        <p>Pass Requirement :{ride.pass}</p>
         </div>
       </div>
     </div>
