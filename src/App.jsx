@@ -1,29 +1,40 @@
 import { useState, useEffect } from 'react'
 import './App.css'
-import {Router, Routes, Route} from 'react-router-dom'
+import {Routes, Route} from 'react-router-dom'
 import NavBar from './components/NavBar'
 import Rides from './components/Rides'
 import RideDetail from './components/RideDetail'
 import RideForm from './components/RideForm'
+import Client from './services/api'
 
 import Home from './components/Home';
 import About from './components/About';
 
 function App() {
+  const [rides, setRides] = useState([])
+
+  const getRides = async () => {
+    let res = await Client.get('/rides')
+    console.log(res)
+    setRides(res.data)
+  }
+  useEffect(() => {
+    getRides()
+  },[])
+
   return (
     <div>
-      <header></header>
+      <header>
+        <NavBar />
+      </header>
 
       <main>
         <Routes>
-          <Route>
             <Route path="/about" element={<About />} />
             <Route path="/" element={<Home />} />
-          </Route>
+            <Route path="/rides" element={<Rides rides={rides}/>} />
+            <Route path='/rides/:id' element={<RideDetail rides={rides}/>}/>
         </Routes>
-        <NavBar />
-        <Rides />
-        <RideForm />
       </main>
       <footer></footer>
     </div>
