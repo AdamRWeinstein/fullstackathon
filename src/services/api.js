@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 
-export const BASE_URL = 'https://naez-react-rides-b9658734aee9.herokuapp.com/'
+export const BASE_URL = ''
 
 const Client = axios.create({baseURL: BASE_URL})
 
