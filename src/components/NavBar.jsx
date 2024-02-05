@@ -1,14 +1,12 @@
-
+import { NavLink } from "react-router-dom"
 
 const NavBar = () => {
   return (
     <nav>
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="/add-ride">Add a Ride</a></li>
-
-      </ul>
+        <NavLink to='/'>Home</NavLink>
+        <NavLink to='/about'>About</NavLink>
+        <NavLink to='/rides'>Rides</NavLink>
+        <NavLink to='/add-ride'>Ride Form</NavLink>
     </nav>
   );
 };
