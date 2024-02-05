@@ -55,6 +55,7 @@ const AddRideForm = () => {
         <div>
           <label>Thrill Level:</label>
           <select name="thrill" value={formData.thrill} onChange={handleChange}>
+          <option value="">Select Thrill Level</option>
             <option value="Mild">Mild</option>
             <option value="Moderate">Moderate</option>
             <option value="Maximum">Maximum</option>
